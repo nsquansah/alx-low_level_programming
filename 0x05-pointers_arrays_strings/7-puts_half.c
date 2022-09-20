@@ -1,11 +1,10 @@
-/**
- * puts_half - a function that prints half of a string
- * if odd len, n = (length_of_the_string - 1) / 2
- * @str: input
- * Return: half of input
- */
 #include <stdio.h>
 #include "main.h"
+/**
+ * puts_half - a function that prints half
+ * @str: The sting to be printed
+ * Return: void
+ */
 void puts_half(char *str)
 {
 	int count = 0, i;
