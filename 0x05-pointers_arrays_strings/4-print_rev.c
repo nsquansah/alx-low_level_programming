@@ -1,23 +1,22 @@
-#include "holberton.h"
+#include <stdio.h>
+#include "main.h"
 /**
- * print_rev - a function that prints a string, in reverse
- * fcounter is to first count to end, n is to count back
- * @s: str input
- * Return: string in reverse
+ * print_rev - a function that print
+ * @s: The string to be printed
+ * Return: void
  */
 void print_rev(char *s)
 {
-	int fcounter = 0;
-	int i, n;
+	int count = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (count >= 0)
 	{
-		fcounter++;
+		if (s[count] == '\0')
+			break;
+		count++;
 	}
 
-	for (n = (fcounter - 1); n >= 0; n--)
-	{
-		_putchar(s[n]);
-	}
+	for (count--; count >= 0; count--)
+		_putchar(s[count]);
 	_putchar('\n');
 }
