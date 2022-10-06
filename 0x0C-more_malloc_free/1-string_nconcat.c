@@ -1,24 +1,49 @@
-#include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include "main.h"
 /**
- * _calloc - calloc function
- * @nmemb: number of elements
- * @size: size of bytes
- * Return: pointer or void
+ * string_nconcat - len of 1st str, len of 2nd str, if n < 2nd, 2nd = n
+ * 2nd + 1st = total len, malloc + null byte, loop to insert into temp arr
+ * @s1: input one
+ * @s2: input two
+ * @n: s2's number of bytes
+ * Return: 0
  */
-void *_calloc(unsigned int nmemb, unsigned int size)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *t;
-	unsigned int i;
+	char *arr;
+	unsigned int i, j, co, co_2;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	t = malloc(nmemb * size);
-	if (t == NULL)
-		return (NULL);
-	for (i = 0; i < nmemb * size; i++)
-		t[i] = 0;
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
-	return (t);
+	for (i = 0; s1[i] != '\0'; i++)
+	{
+	}
+
+	for (j = 0; s2[j] != '\0'; j++)
+	{
+	}
+
+	if (n < j)
+		j = n;
+
+	j += i;
+	arr = malloc(sizeof(char *) * (j + 1));
+
+	if (arr == NULL)
+		return (NULL);
+
+	for (co = 0; co < i; co++)
+		arr[co] = s1[co];
+	for (co_2 = 0; co < j; co_2++)
+	{
+		arr[co] = s2[co_2];
+		co++;
+	}
+	co++;
+	arr[co] = '\0';
+	return (arr);
 }
