@@ -1,14 +1,16 @@
 #include "main.h"
+#include "2-get_bit.c"
 /**
- * set_bit - sets bit at index to 1
- * @n: pointer to number
- * @index: index to change
- * Return: 1 on success, -1 on failure
+ * set_bit - sets a bit
+ * @n: integer to grab 
+ *
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	if (index > (8 * sizeof(*n)) - 1)
+	if (index > 32)
 		return (-1);
-	*n = *n | (1 << index);
-	return (1);
+	(*n) |= 1 << index;
+	if (get_bit((*n), index) == 1)
+		return (1);
+	return (-1);
 }
